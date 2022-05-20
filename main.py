@@ -7,8 +7,8 @@ BACKGROUND_COLOR = "#B1DDC6"
 try:
     data = pandas.read_csv("data/words_to_learn.csv")
     if len(data) == 0:
-        raise ValueError
-except FileNotFoundError and ValueError:
+        data = pandas.read_csv("data/french_words.csv")
+except FileNotFoundError:
     data = pandas.read_csv("data/french_words.csv")
 french_data = data["French"].tolist()
 english_data = data["English"].tolist()
